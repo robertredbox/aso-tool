@@ -1,0 +1,314 @@
+:root {
+    --redbox-purple: #2D1A45;
+    --redbox-red: #FF3333;
+    --redbox-light-purple: #3D2A55;
+    --redbox-gray: #f5f5f5;
+}
+
+body {
+    background-color: var(--redbox-purple);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 2rem;
+}
+
+#screenshotPreview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--redbox-light-purple) 0%, var(--redbox-purple) 100%);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.relative {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    transition: transform 0.2s ease;
+}
+
+.relative:hover {
+    transform: translateY(-2px);
+}
+
+.screenshot-preview {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: block;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.screenshot-preview:hover {
+    border-color: var(--redbox-red);
+}
+
+.delete-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--redbox-red);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+    font-size: 16px;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff0000;
+}
+
+.report-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 4px solid var(--redbox-red);
+}
+
+.report-section {
+    background: linear-gradient(135deg, var(--redbox-light-purple) 0%, var(--redbox-purple) 100%);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.report-section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--redbox-red);
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+}
+
+.recommendation-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--redbox-red);
+}
+
+.recommendation-item:before {
+    color: var(--redbox-red);
+}
+
+.recommendation-item ul {
+    margin-top: 0.5rem;
+}
+
+.recommendation-item li {
+    color: var(--redbox-gray);
+    margin-bottom: 0.5rem;
+}
+
+/* Analysis Content Styles */
+.analysis-content {
+    color: var(--redbox-purple);
+}
+
+.analysis-content h3 {
+    color: var(--redbox-purple);
+    margin-bottom: 1.5rem;
+}
+
+.analysis-content h4 {
+    color: var(--redbox-purple);
+    margin-bottom: 1rem;
+}
+
+.analysis-content p {
+    color: var(--redbox-purple);
+    margin-bottom: 1rem;
+}
+
+.analysis-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.analysis-content li {
+    color: var(--redbox-purple);
+    margin-bottom: 0.5rem;
+}
+
+.analysis-content .bg-gray-50 {
+    background-color: var(--redbox-gray);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--redbox-light-purple);
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    transition: border-color 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--redbox-red);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.primary-button, .secondary-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border: none;
+}
+
+.primary-button {
+    background-color: var(--redbox-red);
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: #ff0000;
+    transform: translateY(-1px);
+}
+
+.secondary-button {
+    background-color: var(--redbox-light-purple);
+    color: white;
+}
+
+.secondary-button:hover {
+    background-color: #4d3a65;
+    transform: translateY(-1px);
+}
+
+/* Upload Zone */
+.upload-zone {
+    border: 2px dashed var(--redbox-light-purple);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    transition: border-color 0.2s ease;
+}
+
+.upload-zone:hover {
+    border-color: var(--redbox-red);
+}
+
+.upload-label {
+    color: var(--redbox-red);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Meta Information */
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.meta-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.meta-item strong {
+    color: var(--redbox-red);
+    margin-right: 0.5rem;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+        padding: 20mm;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    .report-section {
+        background: none;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .report-section-title {
+        color: var(--redbox-purple);
+    }
+
+    .recommendation-item {
+        background: none;
+        border-left-color: var(--redbox-purple);
+    }
+
+    .meta-item {
+        background: none;
+        border: 1px solid #ddd;
+    }
+}

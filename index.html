@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App Store Creative Audit Tool</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tool Interface -->
+    <div class="report-section">
+        <h1 class="report-heading">App Store Creative Audit Tool</h1>
+        
+        <!-- App Details Form -->
+        <div class="form-group no-print">
+            <label class="form-label">App Name</label>
+            <input type="text" id="appName" class="form-input" placeholder="Enter app name">
+            
+            <label class="form-label">App Store URL</label>
+            <input type="text" id="appStoreUrl" class="form-input" placeholder="Enter App Store URL">
+        </div>
+
+        <!-- Screenshot Upload -->
+        <div class="form-group no-print">
+            <label class="form-label">Upload Screenshots</label>
+            <div class="upload-zone">
+                <input type="file" id="screenshotUpload" multiple accept="image/*" class="hidden">
+                <label for="screenshotUpload" class="upload-label">Click to upload screenshots</label>
+            </div>
+            <div id="screenshotPreview" class="mt-4"></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+            <button id="generateReport" class="primary-button no-print">
+                Generate Report
+            </button>
+            <button id="downloadPDF" class="secondary-button no-print" style="display: none;">
+                Download PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- Report Template -->
+    <div id="reportContent" class="hidden report-container">
+        <div class="report-header">
+            <h1 class="report-heading">App Store Creative Analysis</h1>
+        </div>
+
+        <div class="report-meta">
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <strong>App Name:</strong>
+                    <span id="reportAppName"></span>
+                </div>
+                <div class="meta-item">
+                    <strong>Analysis Date:</strong>
+                    <span id="reportDate"></span>
+                </div>
+                <div class="meta-item">
+                    <strong>Store Link:</strong>
+                    <span id="reportStoreUrl"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="report-section-title">Screenshot Overview</h2>
+            <div id="screenshotGrid" class="screenshot-grid"></div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="report-section-title">Visual Analysis</h2>
+            <div id="visualAnalysis" class="analysis-content"></div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="report-section-title">Best Practices Review</h2>
+            <div id="bestPractices" class="analysis-content"></div>
+        </div>
+
+        <div class="report-section">
+            <h2 class="report-section-title">Recommendations</h2>
+            <div id="recommendations" class="analysis-content"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
